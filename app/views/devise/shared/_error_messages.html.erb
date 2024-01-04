@@ -1,0 +1,24 @@
+<% if resource.errors.any? %>
+  <div id="error_explanation" data-turbo-cache="false">
+    <div class="alert w3-panel w3-theme-l3 w3-card-4 w3-margin w3-padding w3-display-container">
+        <span   onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">
+                &times;
+        </span>
+        <p>
+        <div class="w3-rest">
+          <h4>
+            <%= I18n.t("errors.messages.not_saved",
+                 count: resource.errors.count,
+                 resource: resource.class.model_name.human.downcase)
+            %>
+          </h4>
+          <ul>
+            <% resource.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    </div>
+  </div>
+<% end %>

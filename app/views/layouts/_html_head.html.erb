@@ -1,0 +1,23 @@
+<head>
+    <title>Blank</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>    
+
+    <!-- W3 CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- W3 CSS Theme color -->
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-<%= ENV['THEME_COLOR'] || "dark-grey" %>.css">
+
+    <!-- GOGGLE ICONs -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- GOOGLE FONT (Roboto & Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+
+    <%= javascript_importmap_tags %>
+</head>

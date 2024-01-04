@@ -1,0 +1,46 @@
+<div class="w3-bar w3-theme">
+
+    <!-- Logo or Brand -->
+    <strong>
+        <%= link_to "Logo", root_path, 
+            class: "w3-bar-item w3-left",
+            style: "text-decoration:none;"
+        %>
+    </strong>
+    
+    <div class="w3-left">
+
+        <!-- To hide when on small screen -->
+        <div class="w3-hide-small">
+        </div>
+
+        <!-- Items if user is signed in -->
+        <% if user_signed_in? %>
+            <% menuItems = [
+                ["Profile",edit_user_registration_path], 
+                ["Posts",posts_path]
+            ]%>
+            <% menuItems.each do |linkName, linkPath| %>
+                <%= link_to linkName, linkPath, class: "w3-bar-item w3-button" %>
+            <% end %>
+
+            <!-- To hide when on small screen and signed in -->
+            <div class="w3-hide-small">
+            </div>
+        <% end %>
+    </div>
+
+    <!-- Login / Logout Button -->
+    <div class="w3-right">
+        <% if user_signed_in? %>
+            <%= button_to "Log Out", destroy_user_session_path,
+                method: :delete,
+                class: "w3-bar-item w3-button w3-theme-action"
+            %>
+        <% else %>
+            <%= link_to "Log In", new_user_session_path,
+                class: "w3-bar-item w3-button w3-theme-action"
+            %>
+        <% end %>
+    </div>
+</div>

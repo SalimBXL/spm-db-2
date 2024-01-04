@@ -1,0 +1,9 @@
+<h1><%= t("views.posts.new.title") %></h1>
+
+<%= render "form", post: @post %>
+
+<br>
+
+<div>
+  <%= link_to t("views.posts.new.link_to_back"), posts_path %>
+</div>

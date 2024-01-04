@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t("views.posts.index.title") %></h1>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <h3>
+      <%= post.title %>
+      <% if post.draft? %>
+        <div class="w3-tag w3-theme-l3 w3-round w3-small">Draft</div>
+      <% end %>
+      <% if post.scheduled? %>
+        <div class="w3-tag w3-theme-d3 w3-round w3-small">Scheduled</div>
+      <% end %>
+    </h3>
+    <p>
+      <strong>Author:</strong> <%= post.author.email %>
+      <br />
+      <%= "Publication date : #{post.published_at}" unless post.draft? %>
+    </p>
+    <p>
+      <%= link_to t("views.posts.index.link_to_show"), post %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to t("views.posts.index.link_to_new"), new_post_path %>

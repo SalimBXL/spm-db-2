@@ -1,0 +1,29 @@
+<% if notice.present? %>
+    <div class="notice w3-panel w3-theme-l5 w3-card-4 w3-padding w3-display-container">
+        <span   onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">
+                &times;
+        </span>
+        <div class="w3-col" style="width:50px">
+            <i class="material-symbols-rounded w3-xlarge">info</i>
+        </div>
+        <div class="w3-rest">
+            <%= notice %>
+        </div>
+    </div>
+<% end %>
+
+<% if alert.present? %>
+    <div class="alert w3-panel w3-theme-l3 w3-card-4 w3-padding w3-display-container">
+        <span   onclick="this.parentElement.style.display='none'"
+                class="w3-button w3-large w3-display-topright">
+                &times;
+        </span>
+        <div class="w3-col" style="width:50px">
+            <i class="material-symbols-rounded w3-xlarge">warning</i>
+        </div>
+        <div class="w3-rest">
+            <%= alert %>
+        </div>
+    </div>
+<% end %>

@@ -1,0 +1,101 @@
+<div class="w3-card-4 w3-round w3-margin">
+  <div class="w3-container w3-theme">
+    <h2>Profile</h2>
+  </div>
+  
+  <%= form_for(resource, as: resource_name, class: "w3-container", url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field w3-container w3-text-theme w3-row w3-section">
+      <div class="w3-col" style="width:50px">
+        <i class="material-symbols-rounded w3-xxlarge">mail</i>
+      </div>
+      <div class="w3-rest">
+        <%= f.email_field :email, 
+          class: "w3-input w3-border w3-theme-l5 w3-round",
+          placeholder: "Email",
+          autofocus: true, autocomplete: "email"
+        %>
+      </div>
+    </div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field w3-container w3-text-theme">
+      <div class="w3-col" style="width:50px">
+        <i class="material-symbols-rounded w3-xxlarge">lock</i>
+      </div>
+      <div class="w3-rest">
+        <%= f.password_field :password, 
+          class: "w3-input w3-border w3-theme-l5 w3-round",
+          placeholder: "New password",
+          autocomplete: "new-password"
+        %>
+      </div>
+    </div>
+    
+    <div class="field w3-container w3-text-theme">
+      <div class="w3-col" style="width:50px">
+        <i class="material-symbols-rounded w3-xxlarge"></i>
+      </div>
+      <div class="w3-rest">
+        <%= f.password_field :password_confirmation, 
+          class: "w3-input w3-border w3-theme-l5 w3-round",
+          placeholder: "Confirmation",
+          autocomplete: "new-password"
+        %>
+      </div>
+    </div>
+
+    <div class="field w3-container w3-text-theme">
+      <div class="w3-col" style="width:50px">
+        <i class="material-symbols-rounded w3-xxlarge"></i>
+      </div>
+      <div class="w3-rest">
+        <i>(leave blank if you don't want to change it)</i>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      </div>
+    </div>
+
+    <p>
+
+    <div class="field w3-container w3-text-theme">
+      <div class="w3-col" style="width:50px">
+        <i class="material-symbols-rounded w3-xxlarge"></i>
+      </div>
+      <div class="w3-rest">
+        <%= f.password_field :current_password, 
+          class: "w3-input w3-border w3-theme-l5 w3-round",
+          placeholder: "Current password",
+          autocomplete: "current-password"
+        %>
+      </div>
+    </div>
+    
+    <div class="field w3-container w3-text-theme">
+      <div class="w3-col" style="width:50px">
+        <i class="material-symbols-rounded w3-xxlarge"></i>
+      </div>
+      <div class="w3-rest">
+        <i>(we need your current password to confirm your changes)</i><br />
+      </div>
+    </div>
+
+    <div class="actions w3-text-theme w3-container w3-center">
+      <%= f.submit "Update", 
+      class: "w3-theme-action w3-round w3-margin w3-large w3-padding" %>
+    </div>
+  <% end %>  
+</div>
+
+<%= render "devise/shared/links" %>
+
+<div class="w3-hide">
+  <h3>Cancel my account</h3>
+  <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+  <%= link_to "Back", :back %>
+</div>

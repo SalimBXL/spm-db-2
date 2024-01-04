@@ -1,0 +1,24 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+valid:
+  title: MyString
+  content: MyText
+  author: valid
+
+draft:
+  title: MyString
+  content: MyText
+  author: valid
+  published_at: nil
+
+published:
+  title: MyString
+  content: MyText
+  author: valid
+  published_at: <%= 1.month.ago %>
+
+scheduled:
+  title: MyString
+  content: MyText
+  author: valid
+  published_at: <%= 1.month.from_now %>

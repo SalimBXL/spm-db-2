@@ -1,0 +1,14 @@
+require: rubocop-rails
+
+AllCops:
+    NewCops: enable
+    Exclude:
+        - 'db/**/*'
+        - 'config/**/*'
+        - 'script/**/*'
+        - 'bin/{rails/rake}'
+        - 'bin/**/*'
+
+Style/FrozenStringLiteralComment:
+    Enabled: false
+
