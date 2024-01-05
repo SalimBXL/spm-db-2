@@ -22,4 +22,18 @@ user_regular.update!(
   password_confirmation: 'password'
 )
 
-
+settings = Setting.create([
+    {key: 'depository', value: '/home/pet/Database'}, 
+    {key: 'file_spm_base', value: 'SPM_classic.pdf'}, 
+    {key: 'file_spm_mirror', value: 'SPM_mirror.pdf'}, 
+    {key: 'xterm', value: 'xterm -e'},
+    {key: 'download_directory', value: '/home/pet/Downloads'},
+    {key: 'dicom_server_url', value: '127.0.0.1:8042'},
+    {key: 'matlab', value: 'matlab'},
+    {key: 'scripts_matlab', value: '/home/pet/spm/scripts_matlab'},
+    {key: 'startup_matlab', value: '/home/pet/Documents/MATLAB/startup.m'},
+    {key: 'cam1_nom', value: 'PET-CT'},
+    {key: 'cam1_script', value: 'all_petct'},
+    {key: 'cam2_nom', value: 'PET-MR'},
+    {key: 'cam2_script', value: 'all_petmr'}
+])

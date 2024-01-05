@@ -1,3 +1,7 @@
-<h1><%= t("views.home.index.title") %></h1>
+<h1> </h1>
 
-<p><%= t("views.home.index.welcome") %></p>
+<p> </p>
+
+<%= render partial: "new_spm" if current_user %>
+
+<%= render partial: "lasts_spms" if @lasts.presence %>

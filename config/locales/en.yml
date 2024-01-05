@@ -40,10 +40,14 @@ en:
         success: "Post was successfully destroyed."
   
   views:
+    layouts:
+      header:
+        title: SPM-DB²
+        subtitle: SPM Matlab Analyze Database
     home:
       index:
         title: "HOME"
-        welcome: "Welcome in this Rails App."
+        welcome: "Welcome in this App. Please select an option to start."
     posts:
       index:
         title: "Posts"

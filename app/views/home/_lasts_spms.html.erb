@@ -1,0 +1,11 @@
+<div class="w3-card w3-margin w3-padding w3-theme-l5 w3-round">
+    <h1 class="w3-text-theme">Lasts SPM's</h1>
+    <% @lasts.each do |last| %>
+        <p>
+            <code class="w3-tag w3-theme-l5 w3-left"><%= last.study_date %></code>
+            <span class="w3-padding"><%= last.patient.fullname %></span>
+            <%= link_to "Base", last.spm_base, class: "w3-button w3-small w3-theme-l3 w3-right w3-round" %>
+            <%= link_to "Mirror", last.spm_mirror, class: "w3-button w3-small w3-theme-d3 w3-right w3-round" %>
+        </p>
+    <% end %>
+</div>
